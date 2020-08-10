@@ -1,0 +1,41 @@
+<section class="main-slider-box">
+  <div class="main-slider-box-inner">
+    <div class="swiper-navigation">
+      <a href="javascript:void(0)" class="main-btn-prev">
+        <fa-icon [icon]="faAngleLeft"></fa-icon>
+      </a>
+      <a href="javascript:void(0)" class="main-btn-next">
+        <fa-icon [icon]="faAngleRight"></fa-icon>
+      </a>
+    </div>
+    <swiper [config]="config">
+      <div class="slide-item" *ngFor="let i of [1,2,3,4,5]">
+        <img src="../../../../assets/images/banner-image.png" alt="Banner Image">
+      </div>
+    </swiper>
+  </div>
+</section>
+<section class="categories-slider-box">
+  <div class="categories-slider-box-inner">
+    <div class="swiper-navigation">
+      <a href="javascript:void(0)" class="categories-btn-prev">
+        <fa-icon [icon]="faAngleLeft"></fa-icon>
+      </a>
+      <a href="javascript:void(0)" class="categories-btn-next">
+        <fa-icon [icon]="faAngleRight"></fa-icon>
+      </a>
+    </div>
+    <swiper [config]="configCategories">
+      <div class="slide-item" *ngFor="let i of [1,2,3,4,5]">
+        <div class="category-item">
+            <div class="image-box">
+                <fa-icon [icon]="faList"></fa-icon>
+            </div>
+            <div class="title-box">
+                Accessories
+            </div>
+        </div>
+      </div>
+    </swiper>
+  </div>
+</section>
