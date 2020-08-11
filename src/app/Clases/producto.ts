@@ -3,5 +3,4 @@ export class Producto{
     id: String;
     title: String;
     body: String;
-
 }
