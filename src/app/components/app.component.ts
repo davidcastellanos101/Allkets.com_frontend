@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ProductoService } from 'src/app/services/producto.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'allket';
 
 

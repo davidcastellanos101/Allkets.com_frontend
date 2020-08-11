@@ -50,8 +50,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     Error404Component,
     ProductoComponent,
   ],
-  imports: [ ProductoService,
-    BrowserModule,
+  imports: [ 
     BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
@@ -61,7 +60,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 
     HttpClientModule,
   ],
-  providers: [
+  providers: [ ProductoService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
