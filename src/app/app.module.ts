@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule} from '@angular/common/http';
 import { ProductoService } from './services/producto.service';
-import { NewProducto } from './components/newProducto/newProducto.component';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
@@ -58,6 +58,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SwiperModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
+
+    HttpClientModule,
   ],
   providers: [
     {

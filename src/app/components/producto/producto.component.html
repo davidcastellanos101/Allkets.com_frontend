@@ -11,10 +11,11 @@
 
     <div class="right-column">
 
-        <div class="product-description">
-            <span>Pasumerce</span>
-            <h1>Ruana tipo AAA</h1>
-            <h5>Disponible</h5>
+        <div class="product-description" *ngFor="let com of listadoProducto">
+            <span>{{com.userId}}</span>
+            <h5>->ID {{com.id}}</h5>
+            <h5>->NOMBRE {{com.title}}</h5>
+            <h5>->TEXTO {{com.body}}</h5>
         </div>
 
         <div class="product-configuration">

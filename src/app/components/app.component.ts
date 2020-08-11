@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductoService } from 'src/app/services/producto.service';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,10 @@ export class AppComponent implements OnInit{
   constructor(private productoService: ProductoService){
   }
 
-  listadoProducto: NewProducto[];
+  /*listadoProducto: NewProducto[];
 
   ngOnInit() {
-    this.productoService.getProducto()
+    /*this.productoService.getProducto()
     .subscribe(
       (data) => {
         this.listadoProducto = data;
