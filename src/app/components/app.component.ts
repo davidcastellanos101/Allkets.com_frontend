@@ -5,6 +5,24 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'allket';
+
+
+  constructor(private productoService: ProductoService){
+  }
+
+  listadoProducto: NewProducto[];
+
+  ngOnInit() {
+    this.productoService.getProducto()
+    .subscribe(
+      (data) => {
+        this.listadoProducto = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }/** */
 }
