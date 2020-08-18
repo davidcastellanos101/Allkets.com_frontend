@@ -2,16 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { Producto } from 'src/app/Clases/Producto';
-
 @Injectable({
   providedIn: 'root'
 })
-export class ProductoService {
+export class GestionAPIService {
 
-  constructor(protected httpClient: HttpClient) {}
-
-  public consulta(id: any): Observable<any>{
+  constructor(protected httpClient: HttpClient) { }
+  
+  public obtenerProducto(id: any): Observable<any>{
     let idJson : string = JSON.stringify(id);
     let headers = new HttpHeaders();
     /* cabecera que nos da el tipo de archivo que vamos a llamar */
@@ -24,5 +22,4 @@ export class ProductoService {
     return this.httpClient.post('https://test123.free.beeceptor.com/post', idJson, {headers: headers});
     
   }
-
 }
