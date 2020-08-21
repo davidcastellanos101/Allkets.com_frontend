@@ -1,19 +1,18 @@
 <main class="container">
 
     <div class="left-column">
-        <img class="active" data-image="red" src="/assets/images/product-image.png" alt="">
+        <img class="active" data-image="red" src="{{producto.imagenes[1]}}" alt="">
         <div class="descripcion">
-            <p>La ruana es un tipo de poncho suelto sin mangas y abierto en su parte central bajo el hueco donde se coloca la cabeza de quien lo viste, en forma de capote fabricado de manera artesanal que se usa encima de otras prendas, el cual tiene forma cuadrada o rectangular y que en el centro posee un agujero para pasar la cabeza. Originaria de los Andes colombianos y venezolanos. En Colombia, la ruana constituye la prenda característica y tradicional del departamento de Boyacá elaborada inicialmente por indígenas y mestizos y utilizada desde la época de la colonización, aunque también es elaborada en los departamentos de Cundinamarca, Antioquia, Nariño, Santander, Norte de Santander y Caldas. En Venezuela es muy utilizada y elaborada en los estados de Táchira, Mérida y Trujillo, utilizada desde la colonización por todos los habitantes venezolanos, actualmente solo en la región andina se mantiene su uso tradicional.
-
-                Según la RAE, el término ruana proviene del adjetivo en desuso "ruano", que se refiere a una prenda tejida de lana para ir a la calle, que en lengua portuguesa se llama rúa.</p>
+            <p>{{producto.descripcion}}</p>
         </div>
     </div>
 
     <div class="right-column">
 
         <div class="product-description">
-            <span>Pasumerce</span>
-            <h1>Ruana tipo AAA</h1>
+            <!-- Validar existencias para mostrar  disponibilidad-->
+            <span>{{producto.tienda}}</span>
+            <h1>{{producto.nombre}}</h1>
             <h5>Disponible</h5>
         </div>
 
@@ -22,18 +21,11 @@
             <div class="product-color">
                 <span>Color</span>
 
+                <!--To-do: Validar y acomodar valores hexadecimales-->
                 <div class="color-choose">
-                    <div>
-                        <input data-image="red" type="checkbox" id="red" name="color" value="red" checked>
+                    <div *ngFor="let color of producto.colores">
+                        <input data-image="red" type="checkbox" id="red" name="color" value="#{{color.valor}}" checked>
                         <label for="red"><span></span></label>
-                    </div>
-                    <div>
-                        <input data-image="blue" type="checkbox" id="blue" name="color" value="blue">
-                        <label for="blue"><span></span></label>
-                    </div>
-                    <div>
-                        <input data-image="black" type="checkbox" id="black" name="color" value="black">
-                        <label for="black"><span></span></label>
                     </div>
                 </div>
 
@@ -42,16 +34,14 @@
             <div class="tamano">
                 <span>Tamaño</span>
 
-                <div class="tamano-opt">
-                    <button>S</button>
-                    <button>M</button>
-                    <button>XL</button>
+                <div class="tamano-opt" *ngFor="let tamano of producto.tamanos">
+                    <button>{{tamano}}</button>
                 </div>
 
             </div>
         </div>
 
-        <h4 class="precio" style="text-align: center;">250000$</h4>
+        <h4 class="precio" style="text-align: center;">${{producto.precio}}</h4>
         <div class="comprar-boton">
             <p></p>
             <a href="#" class="cart-btn" style="margin: auto;">Añadir al carrito</a>

@@ -145,6 +145,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "allket"
+    }
+  },
+  "defaultProject": "allket",
+  "cli": {
+    "analytics": "729cc4de-6226-4af3-b0c4-708c65627cf2"
+  }
 }

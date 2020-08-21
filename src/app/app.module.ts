@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule} from '@angular/common/http';
+import { ProductoService } from './services/producto.service';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -46,16 +50,17 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     Error404Component,
     ProductoComponent,
   ],
-  imports: [
-    BrowserModule,
+  imports: [ 
     BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
     SwiperModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
+
+    HttpClientModule,
   ],
-  providers: [
+  providers: [ ProductoService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
