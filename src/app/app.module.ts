@@ -28,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -50,14 +51,15 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     Error404Component,
     ProductoComponent,
   ],
-  imports: [ 
+  imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
     FontAwesomeModule,
     SwiperModule,
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
-
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [ ProductoService,
