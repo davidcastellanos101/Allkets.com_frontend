@@ -104,6 +104,12 @@ body {
     clear: both;
 }
 
+.row {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
 
 /* Right Column */
 
@@ -154,6 +160,9 @@ body {
 
 .product-color {
     margin-bottom: 30px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .color-choose div {
@@ -242,6 +251,7 @@ body {
 
 .tamano-opt {
     margin-bottom: 20px;
+    display: inline-block;
 }
 
 .tamano-opt button {
@@ -265,6 +275,9 @@ body {
 .tamano {
     border-bottom: 1px solid #E1E8EE;
     margin-bottom: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .tamano a {

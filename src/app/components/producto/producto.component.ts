@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/Clases/Producto';
@@ -45,7 +45,9 @@ export class ProductoComponent implements OnInit {
       }
     );
   }
-
+ 
+  //metodos de actualizacion al seleccionar 
+  // algun elemento
   public actualizarImagen(imagen: any): void {
     this.imgSeleccionada = imagen;
   }
@@ -61,4 +63,6 @@ export class ProductoComponent implements OnInit {
   public isColorSelected(nomColor: string): boolean{
       return nomColor === this.clrSeleccionado;
   }
+
+  
 }

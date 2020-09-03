@@ -1,6 +1,6 @@
 <form [formGroup]="productoForm">
     <main class="container">
-        <!--colocar la barra de imagnes a seleccionar -->
+
         <div class="left-column">
             <img class="active" src="{{imgSeleccionada}}">
             <div class="row">
@@ -24,8 +24,8 @@
                 <div class="product-color">
                     <span>Color</span>
 
-                    <!--To-do: Validar y acomodar valores hexadecimales-->
                     <div class="color-choose">
+
                         <div *ngFor="let color of producto.colores">
                             <div *ngIf="isColorSelected(color.nombre)">
                                 <input type="checkbox" id="{{color.nombre}}" name="color" (click)="actualizarColor(color)" checked>
