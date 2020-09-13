@@ -1,0 +1,13 @@
+<div class="breadcrumb">
+    <h4>{{ activePage }}</h4>
+    <ul>
+        <li *ngFor="let part of parts | keyvalue">
+
+            <a routerLink='{{ part.key }}'>
+            {{ part.value }}
+          </a>
+
+
+        </li>
+    </ul>
+</div>

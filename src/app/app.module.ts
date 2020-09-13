@@ -29,6 +29,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BreadcrumComponent } from './components/breadcrum/breadcrum.component';
+
+import {TranslateModule} from '@ngx-translate/core';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -50,6 +53,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     LoginComponent,
     Error404Component,
     ProductoComponent,
+    BreadcrumComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -61,6 +65,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    TranslateModule.forRoot(),
   ],
   providers: [ ProductoService,
     {

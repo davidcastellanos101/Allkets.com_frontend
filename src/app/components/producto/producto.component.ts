@@ -17,9 +17,14 @@ export class ProductoComponent implements OnInit {
   public clrSeleccionado: string;
   public tmnSeleccionado: string;
   public productoForm: FormGroup;
+  public productoId: string;
+  public productoTienda: string;
+  public productoNombre: string;
+  public mapaBread: Map<string, string>;
 
-  constructor(private gestionAPI: GestionAPIService, private fb: FormBuilder) {
+  constructor(private gestionAPI: GestionAPIService, private fb: FormBuilder, private route: ActivatedRoute) {
     this.producto = new Producto();
+    this.mapaBread = new Map<string, string>();
     this.productoForm = this.fb.group({
       id: [null],
       tamano: [null, Validators.required],
@@ -29,6 +34,13 @@ export class ProductoComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerProducto();
+    this.productoId = this.route.snapshot.paramMap.get('id');
+    this.productoTienda = this.route.snapshot.paramMap.get('tienda');
+    this.productoNombre = this.route.snapshot.paramMap.get('nombre');
+    
+    this.mapaBread.set('/', 'Inicio');
+    this.mapaBread.set('/tienda/' + this.producto.tienda.codigo, this.productoTienda);
+    
   }
 
   private obtenerProducto(): void {

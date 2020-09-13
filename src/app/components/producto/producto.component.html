@@ -1,4 +1,7 @@
 <form [formGroup]="productoForm">
+    <div class="breadcrumb">
+        <app-breadcrum [parts]="mapaBread"></app-breadcrum>
+    </div>
     <main class="container">
 
         <div class="left-column">
@@ -50,7 +53,7 @@
                 </div>
             </div>
 
-            <h4 class="precio" style="text-align: center;">${{producto.precio}}</h4>
+            <h3 class="precio" style="text-align: center;">${{producto.precio}}</h3>
             <div class="comprar-boton">
                 <p></p>
                 <a href="#" class="cart-btn" style="margin: auto;">Añadir al carrito</a>
