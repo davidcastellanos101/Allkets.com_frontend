@@ -14,25 +14,34 @@
                     <input type="text" class="form-control">
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button">
-              <fa-icon [icon]="faSearch"></fa-icon>
-            </button>
+                            <fa-icon [icon]="faSearch"></fa-icon>
+                        </button>
                     </div>
                 </div>
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <div class="btn-group" dropdown>
-                        <a href="javascript:void(0)" id="button-basic" dropdownToggle type="button" class="nav-link" aria-controls="dropdown-basic">
+                        <a href="javascript:void(0)" id="button-basic" dropdownToggle type="button" class="nav-link"
+                            aria-controls="dropdown-basic">
                             <fa-icon [icon]="faUser" [classes]="['fa-lg']"></fa-icon>
                         </a>
-                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-                            <li role="menuitem"><a class="dropdown-item" href="#">Perfil</a></li>
-                            <li role="menuitem"><a class="dropdown-item active" href="#">Pedidos</a></li>
-                            <li role="menuitem"><a class="dropdown-item" href="#" routerLink="micuenta">Cuenta</a></li>
-                            <li role="menuitem"><a class="dropdown-item" href="#">Soporte</a></li>
-                            <li class="divider dropdown-divider"></li>
-                            <li role="menuitem"><a class="dropdown-item" href="#">Salir</a>
-                            </li>
+                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu"
+                            aria-labelledby="button-basic">
+                            <ng-container *ngIf="islogged();else loggedout">
+                                <li role="menuitem"><a class="dropdown-item" href="#" routerLink="tienda">Perfil</a></li>
+                                <li role="menuitem"><a class="dropdown-item active" href="#">Pedidos</a></li>
+                                <li role="menuitem"><a class="dropdown-item" href="#" routerLink="micuenta">Cuenta</a>
+                                </li>
+                                <li role="menuitem"><a class="dropdown-item" href="#">Soporte</a></li>
+                                <li class="divider dropdown-divider"></li>
+                                <li role="menuitem"><a class="dropdown-item" href="#" (click)='salir()'>Salir</a>
+                                </li>
+                            </ng-container>
+                            <ng-template #loggedout>
+                                <li role="menuitem"><a class="dropdown-item" href="/login">Entrar</a>
+                                </li>
+                            </ng-template>
                         </ul>
                     </div>
                 </li>

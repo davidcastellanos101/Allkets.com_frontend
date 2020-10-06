@@ -1,9 +1,14 @@
-<section class="banner-box">
+
+  <section class="banner-box" [ngStyle]="{'background-image': 'url(' + tienda.imgbanner + ')'}">
+
   <figure class="image-box">
-    <img
-      src="https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg"
-      alt="#"
-    />
+    <ng-container *ngIf="isThereTienda();else default">
+      <img src="{{tienda.img}}" alt="#" />
+    </ng-container>
+    <ng-template #default>
+      <img src="https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg" alt="#" />
+    </ng-template>
+
     <figcaption (click)="openModalWithComponent()">
       Acerca de nosotros
     </figcaption>
@@ -26,4 +31,4 @@
     </li>
   </ul>
 </section>
-<app-promos></app-promos>
+<app-promos [tienda]=id></app-promos>

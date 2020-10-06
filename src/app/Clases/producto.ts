@@ -8,7 +8,7 @@ export class Producto{
     public descripcion: string;
     public imagenes: any[];
     public colores: Color[];
-    public tienda: Tienda;
+    public tienda: string;
     public categoria: Categoria;
     public tamanos: any[];
 }

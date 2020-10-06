@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductoService } from 'src/app/services/producto.service';
-import { Producto } from 'src/app/Clases/Producto';
+import { Producto } from 'src/app/Clases/producto';
 import { GestionAPIService } from '../../Services/gestion-api.service';
 import { Color } from '../../Clases/Color';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { RequestDTO } from 'src/app/Clases/RequestDTO';
 
 @Component({
   selector: 'app-producto',
@@ -33,19 +33,23 @@ export class ProductoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.obtenerProducto();
     this.productoId = this.route.snapshot.paramMap.get('id');
     this.productoTienda = this.route.snapshot.paramMap.get('tienda');
     this.productoNombre = this.route.snapshot.paramMap.get('nombre');
+    this.obtenerProducto();
+
     
     this.mapaBread.set('/', 'Inicio');
-    this.mapaBread.set('/tienda/' + this.producto.tienda.codigo, this.productoTienda);
+    this.mapaBread.set('/tienda/' + this.producto.tienda, this.productoTienda);
     
   }
 
   private obtenerProducto(): void {
     // Se cambiara el 100 , ya que  se debe obtener de la URL
-    this.gestionAPI.obtenerProducto(100).subscribe(
+    let reqdto: RequestDTO;
+    reqdto = new RequestDTO();
+    reqdto.id = this.productoId;
+    this.gestionAPI.obtenerProducto(reqdto).subscribe(
       (data) => {
         this.producto = data;
         this.imgSeleccionada = this.producto.imagenes[0];

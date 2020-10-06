@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { ProductoService } from 'src/app/services/producto.service';
+import { ProductoService } from 'src/app/Services/producto.service';
 
 @Component({
   selector: 'app-root',

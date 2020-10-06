@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CuentaComponent implements OnInit {
 
-  constructor() { }
+  public seccion: String;
+
+  constructor() { 
+    this.seccion = 'crearProducto';
+  }
 
   ngOnInit(): void {
+  }
+
+  public cambiarSeccion(seccion: String): void{
+    this.seccion = seccion;
   }
 
 }

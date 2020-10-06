@@ -7,7 +7,21 @@ import { Observable } from 'rxjs';
 })
 export class AutenticacionService {
 
+
   constructor(protected httpClient: HttpClient) { }
+
+  public static logout(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  }
+
+  public static islogged(): boolean{
+    if (localStorage.getItem("token") != undefined && localStorage.getItem("user") != undefined) {
+      return true;
+    }
+    return false;
+  }
+
   public obtenerTokenUsuario(usuario: string,passwd: string ): Observable<any>{
     let request = {
       "usuario":usuario,
@@ -19,8 +33,22 @@ export class AutenticacionService {
     /* cabecera que nos da el tipo de archivo que vamos a llamar */
     headers.set('Content-Type','application/json');
     
-    
-    return this.httpClient.post('https://run.mocky.io/v3/537e38e0-7d38-4e92-8b9f-84a233d85d10', requestJSON, {headers: headers});
+    let tokentmp = this.httpClient.post('http://167.172.114.200:30126/user?user='+usuario+'&password='+passwd, '');
+    tokentmp.subscribe(
+      (data) => {
+        localStorage.setItem("token", Object(data)["token"]);
+        localStorage.setItem("user", Object(data)["id"]);
+        console.log(localStorage.getItem("token"));
+        console.log(JSON.stringify(data));
+        if (data == undefined){
+          alert('Login fallido, revisa los datos ingresados')
+        }
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+    return tokentmp;
     
   }
 

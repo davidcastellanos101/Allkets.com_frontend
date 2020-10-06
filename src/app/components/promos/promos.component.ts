@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Producto } from 'src/app/Clases/producto';
+import { GestionAPIService } from 'src/app/Services/gestion-api.service';
 
 @Component({
   selector: 'app-promos',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromosComponent implements OnInit {
 
-  constructor() { }
+  public productos: Producto[];
+  @Input() public tienda: string;
+
+  constructor(private gestionAPI: GestionAPIService) { }
 
   ngOnInit(): void {
+    this.gestionAPI.obtenerProductosTienda2(this.tienda).subscribe(
+      (data) => {
+        this.productos = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
 }

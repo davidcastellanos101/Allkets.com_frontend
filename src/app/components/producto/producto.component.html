@@ -32,11 +32,11 @@
                         <div *ngFor="let color of producto.colores">
                             <div *ngIf="isColorSelected(color.nombre)">
                                 <input type="checkbox" id="{{color.nombre}}" name="color" (click)="actualizarColor(color)" checked>
-                                <label for="{{color.nombre}}"><span style="background-color: #{{color.valor}};" ></span></label>
+                                <label for="{{color.nombre}}"><span style="background-color: {{color.valor}};" ></span></label>
                             </div>
                             <div *ngIf="!isColorSelected(color.nombre)">
                                 <input type="checkbox" id="{{color.nombre}}" name="color" (click)="actualizarColor(color)">
-                                <label for="{{color.nombre}}"><span style="background-color: #{{color.valor}};" ></span></label>
+                                <label for="{{color.nombre}}"><span style="background-color: {{color.valor}};" ></span></label>
                             </div>
                         </div>
                     </div>

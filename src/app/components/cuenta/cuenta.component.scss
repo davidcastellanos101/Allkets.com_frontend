@@ -35,6 +35,10 @@
 }
 
 .content-with-sidemenu {
+  float: left;
+  display: block;
+  min-height: 200px;
+  height: 200px;
     padding:20px;
   .links-box {
     background: #6f6f6f;
@@ -49,6 +53,7 @@
     padding:15px 5px;
 
     a {
+      cursor: pointer;
       color: white;
       font-size: 16px;
       padding: 5px 10px;
@@ -73,4 +78,10 @@
       padding: 0 5px;
     }
   }
+}
+
+.content-body {
+  padding-bottom: 20px;
+  margin: 20px;
+  min-height: 250px;
 }

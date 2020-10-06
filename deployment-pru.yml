@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: deployment-ng
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            role: msng
+    template:
+        metadata:
+            labels:
+                role: msng
+        spec:
+            securityContext:
+                runAsUser: 0
+            containers:
+            -   name: msng
+                image: davidcastellanos101/allkets:2.0
+                imagePullPolicy: Always
+                ports:
+                -   containerPort: 80
+            imagePullSecrets:
+            -   name: regcred

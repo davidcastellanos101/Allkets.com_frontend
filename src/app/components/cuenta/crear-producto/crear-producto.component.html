@@ -1,0 +1,69 @@
+<div class="container">
+    <form [formGroup]="formGroup">
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Nombre</h5></span>
+            </div>
+            <input type="text" class="form-control" name="nombre" formControlName="nombre" placeholder="NOMBRE">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Descripción</h5></span>
+            </div>
+            <textarea id="w3review" name="desc" rows="4" cols="64" formControlName="desc" placeholder="DESCRIPCIÓN">
+            </textarea>
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Precio</h5></span>
+            </div>
+            <input type="number" class="form-control" name="precio" formControlName="precio" placeholder="PRECIO">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Color #1</h5></span>
+            </div>
+            <input type="color" style="height: auto;" class="form-control" name="color1" formControlName="color1" value="">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Color #2</h5></span>
+            </div>
+            <input type="color" style="height: auto;" class="form-control" name="color2" formControlName="color2" value="">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Color #3</h5></span>
+            </div>
+            <input type="color" style="height: auto;" class="form-control" name="color3" formControlName="color3" value="">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Tamaño #1</h5></span>
+            </div>
+            <input type="text" class="form-control" name="tam1" formControlName="tam1" placeholder="TAMAÑO">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Tamaño #2</h5></span>
+            </div>
+            <input type="text" class="form-control" name="tam2" formControlName="tam2" placeholder="TAMAÑO">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Tamaño #3</h5></span>
+            </div>
+            <input type="text" class="form-control" name="tam3" formControlName="tam3" placeholder="TAMAÑO" >
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><h5>Imágenes</h5></span>
+            </div>
+            <input type="file" class="form-control" name="img1" formControlName="img1" accept="image/*" multiple (change)="changeListener($event)">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Crear" (click)="crearProducto()" [disabled]="formGroup.invalid"
+                class="btn float-right login_btn">
+        </div>
+    </form>
+</div>

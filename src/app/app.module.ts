@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { HttpClientModule} from '@angular/common/http';
-import { ProductoService } from './services/producto.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductoService } from './Services/producto.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TrendsComponent } from './components/home/trends/trends.component';
@@ -31,7 +32,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BreadcrumComponent } from './components/breadcrum/breadcrum.component';
 
-import {TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { CrearProductoComponent } from './components/cuenta/crear-producto/crear-producto.component';
+import { ActualizarTiendaComponent } from './components/cuenta/actualizar-tienda/actualizar-tienda.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -54,6 +57,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     Error404Component,
     ProductoComponent,
     BreadcrumComponent,
+    CrearProductoComponent,
+    ActualizarTiendaComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -67,12 +72,15 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HttpClientModule,
     TranslateModule.forRoot(),
   ],
-  providers: [ ProductoService,
+  providers: [ProductoService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
     },
+    { 
+      provide: LocationStrategy, 
+      useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

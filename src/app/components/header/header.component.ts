@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { 
   faUser,
   faShoppingCart,
   faSearch
 } from '@fortawesome/free-solid-svg-icons';
+import { AutenticacionService } from 'src/app/Services/autenticacion.service';
 
 @Component({
   selector: 'app-header',
@@ -16,9 +18,18 @@ export class HeaderComponent implements OnInit {
   faShoppingCart = faShoppingCart;
   faSearch = faSearch;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  public islogged() {
+    return AutenticacionService.islogged();
+  }
+
+  public salir() {
+    AutenticacionService.logout();
+    this.router.navigate(['/login']);
   }
 
 }
