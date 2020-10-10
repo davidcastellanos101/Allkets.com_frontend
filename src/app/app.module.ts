@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ProductoService } from './Services/producto.service';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
@@ -35,6 +33,7 @@ import { BreadcrumComponent } from './components/breadcrum/breadcrum.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CrearProductoComponent } from './components/cuenta/crear-producto/crear-producto.component';
 import { ActualizarTiendaComponent } from './components/cuenta/actualizar-tienda/actualizar-tienda.component';
+import { GestionAPIService } from './Services/gestion-api.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -72,7 +71,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HttpClientModule,
     TranslateModule.forRoot(),
   ],
-  providers: [ProductoService,
+  providers: [GestionAPIService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,

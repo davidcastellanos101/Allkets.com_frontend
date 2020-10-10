@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { ProductoService } from 'src/app/Services/producto.service';
+import { GestionAPIService } from '../Services/gestion-api.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'allket';
 
 
-  constructor(private productoService: ProductoService){
+  constructor(private gestionAPI: GestionAPIService){
   }
 
   /*listadoProducto: NewProducto[];

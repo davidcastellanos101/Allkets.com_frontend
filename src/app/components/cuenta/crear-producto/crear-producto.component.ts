@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Producto } from 'src/app/Clases/producto';
 import { Color } from 'src/app/Clases/Color';
-import { ProductoService } from 'src/app/Services/producto.service';
+import { GestionAPIService } from '../../../Services/gestion-api.service';
 
 @Component({
   selector: 'app-crear-producto',
@@ -14,7 +14,7 @@ export class CrearProductoComponent implements OnInit {
   public formGroup: FormGroup;
   public imagenes: String[];
 
-  constructor(private formBuilder: FormBuilder,private gestionAPI: ProductoService) {
+  constructor(private formBuilder: FormBuilder,private gestionAPI: GestionAPIService) {
     this.buildForm();
     this.imagenes = new Array<String>();
    }

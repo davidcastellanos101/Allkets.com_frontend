@@ -79,6 +79,4 @@ export class ProductoComponent implements OnInit {
   public isColorSelected(nomColor: string): boolean{
       return nomColor === this.clrSeleccionado;
   }
-
-  
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { AutenticacionService } from '../Services/autenticacion.service';
+import { GestionAPIService } from '../Services/gestion-api.service';
 
 
 @Injectable({ providedIn: 'root' })
@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
     ) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        if (AutenticacionService.islogged()) {
+        if (GestionAPIService.islogged()) {
             // authorised so return true
             return true;
         }

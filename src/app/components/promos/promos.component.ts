@@ -15,6 +15,8 @@ export class PromosComponent implements OnInit {
   constructor(private gestionAPI: GestionAPIService) { }
 
   ngOnInit(): void {
+
+    if (this.tienda != null){
     this.gestionAPI.obtenerProductosTienda2(this.tienda).subscribe(
       (data) => {
         this.productos = data;
@@ -24,5 +26,15 @@ export class PromosComponent implements OnInit {
       }
     );
   }
-
+  else{
+    this.gestionAPI.obtenerProductos().subscribe(
+      (data) => {
+        this.productos = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AutenticacionService } from '../../Services/autenticacion.service';
+import { GestionAPIService } from '../../Services/gestion-api.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   public formGroup: FormGroup;
   private returnUrl: String;
 
-  constructor(private autenticacion: AutenticacionService, private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router) { }
+  constructor(private gestionAPI:GestionAPIService, private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   public auth() {
-    this.autenticacion.obtenerTokenUsuario(this.formGroup.controls['user'].value,this.formGroup.controls['password'].value).subscribe(
+    this.gestionAPI.obtenerTokenUsuario(this.formGroup.controls['user'].value,this.formGroup.controls['password'].value).subscribe(
       (data) => {
         if ( Object(data)["token"] != undefined ) {
           if (this.returnUrl != undefined && this.returnUrl != '/login') {

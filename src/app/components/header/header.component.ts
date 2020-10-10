@@ -5,7 +5,7 @@ import {
   faShoppingCart,
   faSearch
 } from '@fortawesome/free-solid-svg-icons';
-import { AutenticacionService } from 'src/app/Services/autenticacion.service';
+import { GestionAPIService } from '../../Services/gestion-api.service';
 
 @Component({
   selector: 'app-header',
@@ -24,11 +24,11 @@ export class HeaderComponent implements OnInit {
   }
 
   public islogged() {
-    return AutenticacionService.islogged();
+    return GestionAPIService.islogged();
   }
 
   public salir() {
-    AutenticacionService.logout();
+    GestionAPIService.logout();
     this.router.navigate(['/login']);
   }
 
