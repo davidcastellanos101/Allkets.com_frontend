@@ -9,8 +9,11 @@
       </a>
     </div>
     <swiper [config]="config">
-      <div class="slide-item" *ngFor="let i of [1,2,3,4,5]">
-        <img src="../../../../assets/images/banner-image.png" alt="Banner Image">
+      <div class="slide-item" *ngFor="let i of [1, 2, 3, 4, 5]">
+        <img
+          src="../../../../assets/images/banner-image.png"
+          alt="Banner Image"
+        />
       </div>
     </swiper>
   </div>
@@ -26,14 +29,12 @@
       </a>
     </div>
     <swiper [config]="configCategories">
-      <div class="slide-item" *ngFor="let i of [1,2,3,4,5]">
+      <div class="slide-item" *ngFor="let i of [1, 2, 3, 4, 5]">
         <div class="category-item">
-            <div class="image-box">
-                <fa-icon [icon]="faList"></fa-icon>
-            </div>
-            <div class="title-box">
-                Accessories
-            </div>
+          <div class="image-box">
+            <fa-icon [icon]="faList"></fa-icon>
+          </div>
+          <div class="title-box">Accessories</div>
         </div>
       </div>
     </swiper>

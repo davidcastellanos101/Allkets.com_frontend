@@ -1,17 +1,15 @@
-import { Component, OnInit} from '@angular/core';
-import { GestionAPIService } from '../Services/gestion-api.service';
+import { Component, OnInit } from '@angular/core';
+import { GestionAPIService } from '../Services/Gestion-api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'allket';
 
-
-  constructor(private gestionAPI: GestionAPIService){
-  }
+  constructor(private gestionAPI: GestionAPIService) {}
 
   /*listadoProducto: NewProducto[];
 

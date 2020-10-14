@@ -6,18 +6,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { TrendsComponent } from './components/home/trends/trends.component';
-import { HomeComponent } from './components/home/home.component';
-import { PromosComponent } from './components/promos/promos.component';
-import { SlidersComponent } from './components/home/sliders/sliders.component';
-import { TiendaComponent } from './components/tienda/tienda.component';
-import { CuentaComponent } from './components/cuenta/cuenta.component';
+import { HeaderComponent } from './components/header/Header.component';
+import { FooterComponent } from './components/footer/Footer.component';
+import { TrendsComponent } from './components/home/trends/Trends.component';
+import { HomeComponent } from './components/home/Home.component';
+import { PromosComponent } from './components/Promos/Promos.component';
+import { SlidersComponent } from './components/home/sliders/Sliders.component';
+import { TiendaComponent } from './components/tienda/Tienda.component';
+import { CuentaComponent } from './components/cuenta/Cuenta.component';
 import { LoginComponent } from './components/login/login.component';
-import { Error404Component } from './components/error404/error404.component';
-import { ProductoComponent } from './components/producto/producto.component';
-import { CardComponent } from './components/card/card.component';
+import { Error404Component } from './components/error404/Error404.component';
+import { ProductoComponent } from './components/Producto/Producto.component';
+import { CardComponent } from './components/card/CardComponent.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SWIPER_CONFIG, SwiperModule } from 'ngx-swiper-wrapper';
@@ -28,12 +28,12 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BreadcrumComponent } from './components/breadcrum/breadcrum.component';
+import { BreadcrumComponent } from './components/breadcrum/Breadcrum.component';
 
 import { TranslateModule } from '@ngx-translate/core';
-import { CrearProductoComponent } from './components/cuenta/crear-producto/crear-producto.component';
-import { ActualizarTiendaComponent } from './components/cuenta/actualizar-tienda/actualizar-tienda.component';
-import { GestionAPIService } from './Services/gestion-api.service';
+import { CrearProductoComponent } from './components/cuenta/crear-producto/Crear-producto.component';
+import { ActualizarTiendaComponent } from './components/cuenta/actualizar-tienda/Actualizar-tienda.component';
+import { GestionAPIService } from './Services/Gestion-api.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -71,15 +71,17 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     HttpClientModule,
     TranslateModule.forRoot(),
   ],
-  providers: [GestionAPIService,
+  providers: [
+    GestionAPIService,
     {
       provide: SWIPER_CONFIG,
       useValue: DEFAULT_SWIPER_CONFIG,
     },
-    { 
-      provide: LocationStrategy, 
-      useClass: HashLocationStrategy }
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+    },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

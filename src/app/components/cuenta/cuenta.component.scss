@@ -7,29 +7,44 @@
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+18,ffeeb7+64,ffe89e+100 */
   background: rgb(255, 255, 255);
   /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 18%, rgba(255, 238, 183, 1) 64%, rgba(255, 232, 158, 1) 100%);
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 238, 183, 1) 64%,
+    rgba(255, 232, 158, 1) 100%
+  );
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 18%, rgba(255, 238, 183, 1) 64%, rgba(255, 232, 158, 1) 100%);
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 238, 183, 1) 64%,
+    rgba(255, 232, 158, 1) 100%
+  );
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 18%, rgba(255, 238, 183, 1) 64%, rgba(255, 232, 158, 1) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 18%,
+    rgba(255, 238, 183, 1) 64%,
+    rgba(255, 232, 158, 1) 100%
+  );
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffe89e', GradientType=0);
   /* IE6-9 */
 
   min-height: 250px;
   position: relative;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:20px;
+  padding: 20px;
 
   h1 {
     color: #323232;
     font-size: 65px;
     font-weight: 800;
-    @media(max-width:650px){
-        font-size:40px;
+    @media (max-width: 650px) {
+      font-size: 40px;
     }
   }
 }
@@ -39,18 +54,18 @@
   display: block;
   min-height: 200px;
   height: 200px;
-    padding:20px;
+  padding: 20px;
   .links-box {
     background: #6f6f6f;
     color: white;
     box-shadow: -3px 0px 7px 0px rgba(0, 0, 0, 0.52);
-    list-style:none;
-    padding:0;
-    margin:0;
-    max-width:180px;
-    border-radius:10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 180px;
+    border-radius: 10px;
     overflow: hidden;
-    padding:15px 5px;
+    padding: 15px 5px;
 
     a {
       cursor: pointer;
@@ -58,7 +73,7 @@
       font-size: 16px;
       padding: 5px 10px;
       border-radius: 15px;
-      display:block;
+      display: block;
 
       &:hover,
       &:active,

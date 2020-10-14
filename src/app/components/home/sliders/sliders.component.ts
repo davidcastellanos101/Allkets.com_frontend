@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
-import { 
+import {
   faAngleLeft,
   faAngleRight,
-  faList
+  faList,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sliders',
-  templateUrl: './sliders.component.html',
-  styleUrls: ['./sliders.component.scss']
+  templateUrl: './Sliders.component.html',
+  styleUrls: ['./Sliders.component.scss'],
 })
 export class SlidersComponent implements OnInit {
-
   faAngleLeft = faAngleLeft;
   faAngleRight = faAngleRight;
   faList = faList;
@@ -27,7 +26,7 @@ export class SlidersComponent implements OnInit {
       nextEl: '.main-btn-next',
       prevEl: '.main-btn-prev',
     },
-  }
+  };
   configCategories = {
     slidesPerView: 1,
     pagination: false,
@@ -38,25 +37,23 @@ export class SlidersComponent implements OnInit {
     breakpoints: {
       // when window width is >= 320px
       0: {
-        slidesPerView: 1
+        slidesPerView: 1,
       },
       // when window width is >= 480px
       480: {
-        slidesPerView: 2
+        slidesPerView: 2,
       },
       // when window width is >= 640px
       640: {
-        slidesPerView: 3
+        slidesPerView: 3,
       },
       991: {
-        slidesPerView: 4
-      }
-    }
-  }
+        slidesPerView: 4,
+      },
+    },
+  };
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

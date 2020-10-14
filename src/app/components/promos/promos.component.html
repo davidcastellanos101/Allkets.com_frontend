@@ -1,19 +1,31 @@
 <section class="products">
-    <h3 class="category-title">
-        <span>Promociones</span>
-    </h3>
-    <div class="products-list">
-        <div class="row">
-            <div class="col col-12 col-sm-6 col-md-3 col-lg-2" *ngFor="let producto of productos">
-                <a href="#" [routerLink]="['/producto',producto.tienda,producto.id,producto.nombre]" class="product-item">
-                    <div class="figure-inner">
-                        <figure>
-                            <img src="{{producto.imagenes[0]}}" alt="Product">
-                        </figure>
-                        <h4 class="price">{{producto.precio}}</h4>
-                    </div>
-                </a>
-            </div>
-        </div>
+  <h3 class="category-title">
+    <span>Promociones</span>
+  </h3>
+  <div class="products-list">
+    <div class="row">
+      <div
+        class="col col-12 col-sm-6 col-md-3 col-lg-2"
+        *ngFor="let producto of productos"
+      >
+        <a
+          href="#"
+          [routerLink]="[
+            '/producto',
+            producto.tienda,
+            producto.id,
+            producto.nombre
+          ]"
+          class="product-item"
+        >
+          <div class="figure-inner">
+            <figure>
+              <img src="{{ producto.imagenes[0] }}" alt="Product" />
+            </figure>
+            <h4 class="price">{{ producto.precio }}</h4>
+          </div>
+        </a>
+      </div>
     </div>
+  </div>
 </section>

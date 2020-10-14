@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TiendaDTO } from '../Clases/TiendaDTO';
-import { Producto } from '../Clases/producto';
+import { Producto } from '../Clases/Producto';
 
 const DIRECCION = 'http://167.172.114.200';
 const PUERTO = '30126';
@@ -10,7 +10,6 @@ const PUERTO = '30126';
 @Injectable({
   providedIn: 'root',
 })
-
 export class GestionAPIService {
   constructor(protected httpClient: HttpClient) {}
 

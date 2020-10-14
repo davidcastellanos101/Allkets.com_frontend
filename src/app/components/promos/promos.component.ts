@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Producto } from 'src/app/Clases/producto';
-import { GestionAPIService } from 'src/app/Services/gestion-api.service';
+import { Producto } from 'src/app/Clases/Producto';
+import { GestionAPIService } from 'src/app/Services/Gestion-api.service';
 
 @Component({
   selector: 'app-promos',
-  templateUrl: './promos.component.html',
-  styleUrls: ['./promos.component.scss'],
+  templateUrl: './Promos.component.html',
+  styleUrls: ['./Promos.component.scss'],
 })
 export class PromosComponent implements OnInit {
   public productos: Producto[];

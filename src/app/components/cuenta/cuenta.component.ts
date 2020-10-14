@@ -2,22 +2,19 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cuenta',
-  templateUrl: './cuenta.component.html',
-  styleUrls: ['./cuenta.component.scss']
+  templateUrl: './Cuenta.component.html',
+  styleUrls: ['./Cuenta.component.scss'],
 })
 export class CuentaComponent implements OnInit {
-
   public seccion: String;
 
-  constructor() { 
+  constructor() {
     this.seccion = 'crearProducto';
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  public cambiarSeccion(seccion: String): void{
+  public cambiarSeccion(seccion: String): void {
     this.seccion = seccion;
   }
-
 }

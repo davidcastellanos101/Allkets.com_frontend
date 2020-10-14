@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { 
+import {
   faUser,
   faShoppingCart,
-  faSearch
+  faSearch,
 } from '@fortawesome/free-solid-svg-icons';
-import { GestionAPIService } from '../../Services/gestion-api.service';
+import { GestionAPIService } from '../../Services/Gestion-api.service';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  templateUrl: './Header.component.html',
+  styleUrls: ['./Header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   faUser = faUser;
   faShoppingCart = faShoppingCart;
   faSearch = faSearch;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public islogged() {
     return GestionAPIService.islogged();
@@ -31,5 +29,4 @@ export class HeaderComponent implements OnInit {
     GestionAPIService.logout();
     this.router.navigate(['/login']);
   }
-
 }

@@ -1,3 +1,3 @@
-export class RequestDTO{
-    public id: string;
+export class RequestDTO {
+  public id: string;
 }

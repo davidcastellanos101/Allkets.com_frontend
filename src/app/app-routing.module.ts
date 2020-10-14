@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
-import { CuentaComponent } from './components/cuenta/cuenta.component';
-import { TiendaComponent } from './components/tienda/tienda.component';
-import { Error404Component } from './components/error404/error404.component';
-import { ProductoComponent } from "./components/producto/producto.component";
+import { HomeComponent } from './components/home/Home.component';
+import { CuentaComponent } from './components/cuenta/Cuenta.component';
+import { TiendaComponent } from './components/tienda/Tienda.component';
+import { Error404Component } from './components/error404/Error404.component';
+import { ProductoComponent } from './components/Producto/Producto.component';
 import { AuthGuard } from './Helpers/AuthGuard';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',
@@ -21,23 +21,23 @@ const routes: Routes = [
   {
     path: 'micuenta',
     component: CuentaComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'tienda',
     component: TiendaComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'producto/:tienda/:id/:nombre',
     component: ProductoComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: '404',
     component: Error404Component,
   },
-  { path: '**', redirectTo: '404' }
+  { path: '**', redirectTo: '404' },
 ];
 
 @NgModule({

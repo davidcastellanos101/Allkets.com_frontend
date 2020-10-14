@@ -1,66 +1,74 @@
 <form [formGroup]="productoForm">
-    <div class="breadcrumb">
-        <app-breadcrum [parts]="mapaBread"></app-breadcrum>
+  <div class="breadcrumb">
+    <app-breadcrum [parts]="mapaBread"></app-breadcrum>
+  </div>
+  <main class="container">
+    <div class="left-column">
+      <img class="active" src="{{ imgSeleccionada }}" />
+      <div class="row">
+        <div class="column" *ngFor="let imagen of producto.imagenes">
+          <img src="{{ imagen }}" (click)="actualizarImagen(imagen)" />
+        </div>
+      </div>
+      <div class="descripcion">
+        <p>{{ producto.descripcion }}</p>
+      </div>
     </div>
-    <main class="container">
+    <div class="right-column">
+      <div class="product-description">
+        <!-- Validar existencias para mostrar  disponibilidad-->
+        <span>{{ producto.tienda }}</span>
+        <h1>{{ producto.nombre }}</h1>
+        <h5>Disponible</h5>
+      </div>
+      <div class="product-configuration">
+        <div class="product-color">
+          <span>Color</span>
 
-        <div class="left-column">
-            <img class="active" src="{{imgSeleccionada}}">
-            <div class="row">
-                <div class="column" *ngFor="let imagen of producto.imagenes">
-                    <img src="{{imagen}}" (click)="actualizarImagen(imagen)">
-                </div>
+          <div class="color-choose">
+            <div *ngFor="let color of producto.colores">
+              <div *ngIf="isColorSelected(color.nombre)">
+                <input
+                  type="checkbox"
+                  id="{{ color.nombre }}"
+                  name="color"
+                  (click)="actualizarColor(color)"
+                  checked
+                />
+                <label for="{{ color.nombre }}"
+                  ><span style="background-color: {{ color.valor }};"></span
+                ></label>
+              </div>
+              <div *ngIf="!isColorSelected(color.nombre)">
+                <input
+                  type="checkbox"
+                  id="{{ color.nombre }}"
+                  name="color"
+                  (click)="actualizarColor(color)"
+                />
+                <label for="{{ color.nombre }}"
+                  ><span style="background-color: {{ color.valor }};"></span
+                ></label>
+              </div>
             </div>
-            <div class="descripcion">
-                <p>{{producto.descripcion}}</p>
-            </div>
-        </div>
-        <div class="right-column">
-            <div class="product-description">
-                <!-- Validar existencias para mostrar  disponibilidad-->
-                <span>{{producto.tienda}}</span>
-                <h1>{{producto.nombre}}</h1>
-                <h5>Disponible</h5>
-            </div>
-            <div class="product-configuration">
-
-                <div class="product-color">
-                    <span>Color</span>
-
-                    <div class="color-choose">
-
-                        <div *ngFor="let color of producto.colores">
-                            <div *ngIf="isColorSelected(color.nombre)">
-                                <input type="checkbox" id="{{color.nombre}}" name="color" (click)="actualizarColor(color)" checked>
-                                <label for="{{color.nombre}}"><span style="background-color: {{color.valor}};" ></span></label>
-                            </div>
-                            <div *ngIf="!isColorSelected(color.nombre)">
-                                <input type="checkbox" id="{{color.nombre}}" name="color" (click)="actualizarColor(color)">
-                                <label for="{{color.nombre}}"><span style="background-color: {{color.valor}};" ></span></label>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="tamano">
-                    <span>Tamaño</span>
-
-                    <div class="tamano-opt" *ngFor="let tamano of producto.tamanos">
-                        <button (click)="actualizarTamano(tamano)">{{tamano}}</button>
-                    </div>
-
-                </div>
-            </div>
-
-            <h3 class="precio" style="text-align: center;">${{producto.precio}}</h3>
-            <div class="comprar-boton">
-                <p></p>
-                <a href="#" class="cart-btn" style="margin: auto;">Añadir al carrito</a>
-            </div>
+          </div>
         </div>
 
+        <div class="tamano">
+          <span>Tamaño</span>
 
-    </main>
+          <div class="tamano-opt" *ngFor="let tamano of producto.tamanos">
+            <button (click)="actualizarTamano(tamano)">{{ tamano }}</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="precio" style="text-align: center">${{ producto.precio }}</h3>
+      <div class="comprar-boton">
+        <p></p>
+        <a href="#" class="cart-btn" style="margin: auto">Añadir al carrito</a>
+      </div>
+    </div>
+  </main>
 </form>
 <app-trends></app-trends>

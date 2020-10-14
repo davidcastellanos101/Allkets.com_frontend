@@ -1,15 +1,15 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Producto } from 'src/app/Clases/producto';
-import { GestionAPIService } from '../../Services/gestion-api.service';
+import { Producto } from 'src/app/Clases/Producto';
+import { GestionAPIService } from '../../Services/Gestion-api.service';
 import { Color } from '../../Clases/Color';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RequestDTO } from 'src/app/Clases/RequestDTO';
 
 @Component({
   selector: 'app-producto',
-  templateUrl: './producto.component.html',
-  styleUrls: ['./producto.component.scss'],
+  templateUrl: './Producto.component.html',
+  styleUrls: ['./Producto.component.scss'],
 })
 export class ProductoComponent implements OnInit {
   public producto: Producto;
@@ -22,7 +22,11 @@ export class ProductoComponent implements OnInit {
   public productoNombre: string;
   public mapaBread: Map<string, string>;
 
-  constructor(private gestionAPI: GestionAPIService, private fb: FormBuilder, private route: ActivatedRoute) {
+  constructor(
+    private gestionAPI: GestionAPIService,
+    private fb: FormBuilder,
+    private route: ActivatedRoute
+  ) {
     this.producto = new Producto();
     this.mapaBread = new Map<string, string>();
     this.productoForm = this.fb.group({
@@ -38,10 +42,8 @@ export class ProductoComponent implements OnInit {
     this.productoNombre = this.route.snapshot.paramMap.get('nombre');
     this.obtenerProducto();
 
-    
     this.mapaBread.set('/', 'Inicio');
     this.mapaBread.set('/tienda/' + this.producto.tienda, this.productoTienda);
-    
   }
 
   private obtenerProducto(): void {
@@ -61,8 +63,8 @@ export class ProductoComponent implements OnInit {
       }
     );
   }
- 
-  //metodos de actualizacion al seleccionar 
+
+  //metodos de actualizacion al seleccionar
   // algun elemento
   public actualizarImagen(imagen: any): void {
     this.imgSeleccionada = imagen;
@@ -76,7 +78,7 @@ export class ProductoComponent implements OnInit {
     this.tmnSeleccionado = tamano;
   }
 
-  public isColorSelected(nomColor: string): boolean{
-      return nomColor === this.clrSeleccionado;
+  public isColorSelected(nomColor: string): boolean {
+    return nomColor === this.clrSeleccionado;
   }
 }

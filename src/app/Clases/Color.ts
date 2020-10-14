@@ -1,4 +1,4 @@
-export class Color{
-    public nombre: string;
-    public valor: string;
+export class Color {
+  public nombre: string;
+  public valor: string;
 }

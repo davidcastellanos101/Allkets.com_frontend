@@ -3,7 +3,6 @@
 </section>
 
 <section class="content-with-sidemenu">
-
   <aside>
     <ul class="links-box">
       <li>
@@ -29,11 +28,10 @@
 </section>
 
 <section class="content-body">
-  <ng-container *ngIf="seccion=='crearProducto';">
+  <ng-container *ngIf="seccion == 'crearProducto'">
     <app-crear-producto></app-crear-producto>
   </ng-container>
-  <ng-container *ngIf="seccion=='actTienda';">
+  <ng-container *ngIf="seccion == 'actTienda'">
     <app-actualizar-tienda></app-actualizar-tienda>
   </ng-container>
 </section>
-

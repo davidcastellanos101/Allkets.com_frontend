@@ -1,4 +1,4 @@
-export class Categoria{
-public nombre: string;
-public codigo: string;
+export class Categoria {
+  public nombre: string;
+  public codigo: string;
 }
