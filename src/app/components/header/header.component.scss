@@ -51,10 +51,11 @@
   color: white;
   box-shadow: -3px 0px 7px 0px rgba(0, 0, 0, 0.52);
   left: 50% !important;
-  margin-left: -90px !important;
-  min-width: 170px;
-  max-width: 170px;
+  margin-left: -60px !important;
+  min-width: 120px;
+  max-width: 120px;
   position: absolute !important;
+  text-align: center;
   &:before {
     content: "";
     position: absolute;
@@ -77,15 +78,21 @@
     &:focus {
       background: #ffd23e;
       color: black;
-      height: 25px;
     }
     &.active {
       background: #ffd23e;
       color: black;
-      height: 25px;
     }
   }
   li {
     padding: 0 5px;
   }
+}
+
+.tienda{
+ 
+  border-radius: 7px;
+  position: absolute !important;
+  margin-left: -105px !important;
+  padding: 5px;
 }

@@ -34,6 +34,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CrearProductoComponent } from './components/cuenta/crear-producto/Crear-producto.component';
 import { ActualizarTiendaComponent } from './components/cuenta/actualizar-tienda/Actualizar-tienda.component';
 import { GestionAPIService } from './Services/Gestion-api.service';
+import { CrearTiendaComponent } from './components/Header/CrearTienda/CrearTienda.component';
+import { AcercaDeAllketsComponent } from './components/Footer/AcercaDeAllkets/AcercaDeAllkets.component';
+import { TerminosCondicionesComponent } from './components/Footer/TerminosYCondiciones/TerminosYCondiciones.component';
+import { PoliticaPrivacidadComponent } from './components/Footer/PoliticaPrivacidad/PoliticaPrivacidad.component';
+import { AyudaComponent } from './components/Footer/Ayuda/Ayuda.component';
+import { SoporteComponent } from './components/Footer/Soporte/Soporte.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -58,6 +64,12 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     BreadcrumComponent,
     CrearProductoComponent,
     ActualizarTiendaComponent,
+    CrearTiendaComponent,
+    AcercaDeAllketsComponent,
+    TerminosCondicionesComponent,
+    PoliticaPrivacidadComponent,
+    AyudaComponent,
+    SoporteComponent,
   ],
   imports: [
     BrowserAnimationsModule,
