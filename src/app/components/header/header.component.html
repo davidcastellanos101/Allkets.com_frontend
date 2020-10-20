@@ -20,7 +20,9 @@
         </div>
       </form>
       <ul class="navbar-nav">
-        <button class="btn-primary tienda" href="#" routerLink="crear-tienda">Crear Tienda</button>
+        <button class="btn-primary tienda" href="#" routerLink="crear-tienda">
+          Crear Tienda
+        </button>
         <li class="nav-item">
           <div class="btn-group" dropdown>
             <a
@@ -42,15 +44,34 @@
             >
               <ng-container *ngIf="islogged(); else loggedout">
                 <li role="menuitem">
-                  <a class="dropdown-item" href="#" routerLink="tienda"
+                  <a
+                    [ngClass]="{
+                      'dropdown-item active': pagina() == '/tienda',
+                      'dropdown-item': pagina() != '/tienda'
+                    }"
+                    href="#"
+                    routerLink="tienda"
                     >Perfil</a
                   >
                 </li>
                 <li role="menuitem">
-                  <a class="dropdown-item" href="#">Pedidos</a>
+                  <a
+                    [ngClass]="{
+                      'dropdown-item active': pagina() == '/pedidos',
+                      'dropdown-item': pagina() != '/pedidos'
+                    }"
+                    href="#"
+                    >Pedidos</a
+                  >
                 </li>
                 <li role="menuitem">
-                  <a class="dropdown-item" href="#" routerLink="micuenta"
+                  <a
+                    [ngClass]="{
+                      'dropdown-item active': pagina() == '/micuenta',
+                      'dropdown-item': pagina() != '/micuenta'
+                    }"
+                    href="#"
+                    routerLink="micuenta"
                     >Cuenta</a
                   >
                 </li>

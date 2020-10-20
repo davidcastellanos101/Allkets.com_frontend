@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   faShoppingCart = faShoppingCart;
   faSearch = faSearch;
 
-  constructor(private router: Router) {}
+  constructor(public router: Router) {}
 
   ngOnInit(): void {}
 
@@ -28,5 +28,9 @@ export class HeaderComponent implements OnInit {
   public salir() {
     GestionAPIService.logout();
     this.router.navigate(['/login']);
+  }
+
+  public pagina(){
+    return this.router.url;
   }
 }
