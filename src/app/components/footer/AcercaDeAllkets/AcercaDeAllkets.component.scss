@@ -1,6 +1,17 @@
-.acerca-de{
-    text-align: center;
-    border-width: 400px;
-    border-color: yellow;
-    border-style: initial;
+.acerca-de {
+  text-align: left;
+  border-width: 400px;
+  border-color: yellow;
+  border-style: initial;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: white;
+}
+.container{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
