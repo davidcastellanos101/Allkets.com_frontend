@@ -99,3 +99,11 @@
   border-style: hidden;
   height: 40px;
 }
+
+
+@media (max-width: 1200px) {
+  .navbar-nav{
+    display: flex;
+    flex-wrap: nowrap;
+}
+}

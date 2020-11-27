@@ -7,9 +7,9 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
-
+// cambie a porcentaje el max width
 .container {
-  max-width: 1200px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 15px;
   display: flex;
@@ -76,10 +76,10 @@ body {
 
 .column {
   width: 15%;
-  padding: 20px;
+  padding: 7px;
   border: 2px solid #dddcdc;
-  border-radius: 23px;
-  margin: 5px;
+  border-radius: 10px;
+  margin: 15px;
 }
 
 .column img {
@@ -102,7 +102,7 @@ body {
 }
 
 .row {
-  overflow-x: scroll;
+  overflow-x: initial;
   overflow-y: hidden;
   white-space: nowrap;
 }
@@ -145,15 +145,14 @@ body {
   font-size: 14px;
   font-weight: 400;
   color: #86939e;
-  margin-bottom: 20px;
   display: block;
 }
 
 /* Product Color */
 
 .product-color {
-  margin-bottom: 30px;
-  overflow-x: scroll;
+  margin-bottom: 20px;
+  overflow-x: initial;
   overflow-y: hidden;
   white-space: nowrap;
 }
@@ -243,8 +242,9 @@ body {
 }
 
 .tamano-opt {
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
   display: inline-block;
+
 }
 
 .tamano-opt button {
@@ -262,13 +262,13 @@ body {
 .tamano-opt button:active,
 .tamano-opt button:focus {
   border: 2px solid #86939e;
+  margin-bottom: 30px;
   outline: none;
 }
 
 .tamano {
   border-bottom: 1px solid #e1e8ee;
-  margin-bottom: 20px;
-  overflow-x: scroll;
+  overflow-x: initial;
   overflow-y: hidden;
   white-space: nowrap;
 }
@@ -341,10 +341,10 @@ body {
   }
   .column {
     width: 15%;
-    padding: 20px;
+    padding: 7px;
     border: 2px solid #dddcdc;
-    border-radius: 23px;
-    margin: 5px;
+    border-radius: 10px;
+    margin: 15px;
   }
   .column img {
     width: 100%;

@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   faShoppingCart = faShoppingCart;
   faSearch = faSearch;
 
-  constructor(public router: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 

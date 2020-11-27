@@ -1,15 +1,21 @@
 <section class="banner-box">
   <h1>Administración de cuenta</h1>
 </section>
-
+<!-- ng class solo se colocar active por que no tiene otro que lo modifique-->
 <section class="content-with-sidemenu">
   <aside>
     <ul class="links-box">
       <li>
-        <a (click)="cambiarSeccion('crearProducto')">Crear producto</a>
+        <a (click)="cambiarSeccion('crearProducto')" [ngClass]="{
+          'active': getSeccion() == 'crearProducto',
+          '': getSeccion() != 'crearProducto'
+        }">Crear producto</a>
       </li>
       <li>
-        <a (click)="cambiarSeccion('actTienda')">Actualizar tienda</a>
+        <a (click)="cambiarSeccion('actTienda')" [ngClass]="{
+          'active': getSeccion() == 'actTienda',
+          '': getSeccion() != 'actTienda'
+        }">Actualizar tienda</a>
       </li>
       <li>
         <a href="#">Accessories</a>

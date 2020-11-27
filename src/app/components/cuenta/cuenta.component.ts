@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cuenta',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CuentaComponent implements OnInit {
   public seccion: String;
 
-  constructor() {
+  constructor(private router: Router) {
     this.seccion = 'crearProducto';
   }
 
@@ -16,5 +18,9 @@ export class CuentaComponent implements OnInit {
 
   public cambiarSeccion(seccion: String): void {
     this.seccion = seccion;
+  }
+
+  public getSeccion(){
+    return this.seccion;
   }
 }
