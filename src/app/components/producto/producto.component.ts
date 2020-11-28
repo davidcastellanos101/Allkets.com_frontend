@@ -44,6 +44,7 @@ export class ProductoComponent implements OnInit {
 
     this.mapaBread.set('/', 'Inicio');
     this.mapaBread.set('/tienda/' + this.producto.tienda, this.productoTienda);
+    
   }
 
   private obtenerProducto(): void {
@@ -62,6 +63,51 @@ export class ProductoComponent implements OnInit {
         console.error(error);
       }
     );
+  }
+
+
+  public despPasarela() {
+    let ePayco: any;
+    let handler = ePayco.checkout.configure({
+      key: '45b960805ced5c27ce34b1600b4b9f54',
+      test: true
+    });
+
+    let data={
+      //Parametros compra (obligatorio)
+      name: "Camiseta Highlander",
+      description: "Camiseta Highlander",
+      invoice: "1321651651324342",
+      currency: "cop",
+      amount: "47.99",
+      tax_base: "0",
+      tax: "0",
+      country: "co",
+      lang: "en",
+
+      //Onpage="false" - Standard="true"
+      external: "true",
+
+
+      //Atributos opcionales
+      extra1: "extra1",
+      extra2: "extra2",
+      extra3: "extra3",
+      confirmation: "http://secure2.payco.co/prueba_curl.php",
+      response: "http://secure2.payco.co/prueba_curl.php",
+
+      //Atributos cliente
+      name_billing: "Andres Perez",
+      address_billing: "Carrera 19 numero 14 91",
+      type_doc_billing: "cc",
+      mobilephone_billing: "3050000000",
+      number_doc_billing: "100000000",
+
+     //atributo deshabilitación metodo de pago
+      //methodsDisable: ["TDC", "PSE","SP","CASH","DP"]
+
+      };
+      handler.open(data);
   }
 
   //metodos de actualizacion al seleccionar
